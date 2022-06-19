@@ -15296,7 +15296,7 @@ const keyboard = document.querySelector("[data-keyboard]")
 const alertContainer = document.querySelector("[data-alert-container]")
 const guessGrid = document.querySelector("[data-guess-grid]")
 const targetWord = targetWords[Math.floor(Math.random() * targetWords.length)]  //give random word every time.
-alert("Before Pay👉 You should have known, how to play WORLDE or you can checkout online.")
+alert("Before Play👉 You should have known, how to play WORDE or you can checkout online.")
 startInteraction()
 function startInteraction() {
   document.addEventListener("click", handleMouseClick)
