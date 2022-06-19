@@ -86,7 +86,9 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   background-color: black;
+   background-color: hsl(var(--hue, 200),
+       var(--saturation, 1%),
+       calc(var(--lightness-offset, -5%) + var(--lightness, 10%)));
    color: white;
    fill: white;
    text-transform: uppercase;
@@ -110,7 +112,7 @@
  }
 
  .key.wrong {
-   --lightness: 23%;
+   --lightness: 63%;
  }
 
  .key.wrong-location {
@@ -260,4 +262,3 @@
  .alert.hide {
    opacity: 0;
  }
- 
