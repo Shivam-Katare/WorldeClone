@@ -15301,15 +15301,15 @@ const backSound = new Audio("./sounds/backspace.wav");
 const enterSound = new Audio("./sounds/enter.wav");
 const bgSound = new Audio("./sounds/bg.mp3");
 
-bgSound.play();
-
 alert("Before Play👉 You should have known, how to play WORDE or you can checkout online.")
 startInteraction()
 function startInteraction() {
+  bgSound.play();
   document.addEventListener("click", handleMouseClick)
   document.addEventListener("keydown", handleKeyPress)
 }
 function stopInteraction() {
+  bgSound.play();
   document.removeEventListener("click", handleMouseClick)
   document.removeEventListener("keydown", handleKeyPress)
 }
