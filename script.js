@@ -15296,6 +15296,13 @@ const keyboard = document.querySelector("[data-keyboard]")
 const alertContainer = document.querySelector("[data-alert-container]")
 const guessGrid = document.querySelector("[data-guess-grid]")
 const targetWord = targetWords[Math.floor(Math.random() * targetWords.length)]  //give random word every time.
+const audio = new Audio("./sounds/touch.wav");
+const backSound = new Audio("./sounds/backspace.wav");
+const enterSound = new Audio("./sounds/enter.wav");
+const bgSound = new Audio("./sounds/bg.mp3");
+
+bgSound.play();
+
 alert("Before Play👉 You should have known, how to play WORDE or you can checkout online.")
 startInteraction()
 function startInteraction() {
@@ -15309,28 +15316,34 @@ function stopInteraction() {
 function handleMouseClick(e) {
   if (e.target.matches("[data-key]")) {
     pressKey(e.target.dataset.key)
+    audio.play();
     return
   }
   if (e.target.matches("[data-enter]")) {
     submitGuess()
+    enterSound.play();
     return
   }
   if (e.target.matches("[data-delete]")) {
     deleteKey()
+    backSound.play();
     return
   }
 }
 function handleKeyPress(e) {
   if (e.key === "Enter") {
     submitGuess()
+    enterSound.play();
     return
   }
   if (e.key === "Backspace" || e.key === "Delete") {
     deleteKey()
+    backSound.play()
     return
   }
   if (e.key.match(/^[a-z]$/)) {
     pressKey(e.key)
+    audio.play();
     return
   }
 }
